@@ -1,9 +1,11 @@
 # URLStatistics
 This script can be used to check a web server's performance at a regular interval and log those results to JSON.
 
-## Installation
+## Git and run
 
-## Usage
+`sudo git clone https://github.com/eat-sleep-code/urlstatistics`
+
+### Usage
 
 ```./urlstatistics.sh url [output file] [interval in seconds]```
 
