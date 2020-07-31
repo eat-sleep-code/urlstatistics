@@ -21,6 +21,7 @@ else
 	function ctrl_c() {
 		echo '{}]' >> $outputFile 
 		echo ''
+		exit
 	}
 	
 	if [ -z "$outputFile" ]; then
