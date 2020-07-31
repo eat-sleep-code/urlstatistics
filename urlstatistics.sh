@@ -2,7 +2,7 @@ url=$1
 outputFile=$2
 interval=$3
 echo ''
-echo ' URLStatistics 2020.07.30'
+echo ' URLStatistics 2020.07.30  <eat-sleep-code />'
 
 
 if [ -z "$url" ]; then
@@ -36,7 +36,8 @@ else
 	if [ -z "$interval" ]; then
 		interval=60
 	fi
-
+	echo ' Press CTRL-C to end statistics gathering...'
+	echo ' ----------'
 	echo ''
 	echo '[' > $outputFile 
 	while true; do
