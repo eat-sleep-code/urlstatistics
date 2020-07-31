@@ -2,7 +2,7 @@ url=$1
 outputFile=$2
 interval=$3
 echo ''
-echo ' URLStatistics 2020.07.29'
+echo ' URLStatistics 2020.07.30'
 
 
 if [ -z "$url" ]; then
