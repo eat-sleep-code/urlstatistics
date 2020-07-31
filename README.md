@@ -3,11 +3,16 @@ This script can be used to check a web server's performance at a regular interva
 
 ## Git and run
 
-`sudo git clone https://github.com/eat-sleep-code/urlstatistics`
+```
+sudo git clone https://github.com/eat-sleep-code/urlstatistics
+sudo chown -R $USER:$USER urlstatistics
+cd urlstatistics
+sudo chmod +x urlstatistics.sh
+```
 
 ### Usage
 
-```./urlstatistics.sh url [output file] [interval in seconds]```
+`./urlstatistics.sh url [output file] [interval in seconds]`
 
 ### Example 
 
