@@ -30,16 +30,18 @@ else
 	while true; do
 		timestamp=$(date +"%Y%m%d%H%M%S")
 		echo '{' >> $outputFile
-		echo '	"url": "'$url'"' >> $outputFile
-		echo '	"timestamp": "'$timestamp'"' >> $outputFile
+		echo '	"url": "'$url'",' >> $outputFile
+		echo '	"timestamp": "'$timestamp'",' >> $outputFile
 		curl --output /dev/null --write-out "@urlstatistics.template" --silent $url >> $outputFile
 		echo '},' >> $outputFile
 		echo ' '$timestamp ':' $url
 		sleep $interval
 	done
-	function finish {
+	
+	trap ctrl_c INT
+	function ctrl_c() {
 		echo '{}]' >> $outputFile 
 		echo ''
 	}
-	trap finish EXIT
+	
 fi;
