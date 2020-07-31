@@ -19,9 +19,11 @@ if [ -z "$url" ]; then
 else
 	trap ctrl_c INT
 	function ctrl_c() {
-		echo '{}]' >> $outputFile 
+		truncate -s-1 $outputFile
+		echo ']' >> $outputFile 
 		echo ''
-		exit
+		echo 'Thank you for using URLStatistics...'
+		exit 0
 	}
 	
 	if [ -z "$outputFile" ]; then
