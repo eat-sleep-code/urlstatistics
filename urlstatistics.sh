@@ -17,6 +17,12 @@ if [ -z "$url" ]; then
 	echo ' You may modify the body of the "urlstatistics.template" file to add or remove Curl variables from the output.'
 	echo ''
 else
+	trap ctrl_c INT
+	function ctrl_c($outputFile) {
+		echo '{}]' >> $outputFile 
+		echo ''
+	}
+	
 	if [ -z "$outputFile" ]; then
 		outputFile="urlstatistics.json"
 	fi
@@ -37,11 +43,4 @@ else
 		echo ' '$timestamp ':' $url
 		sleep $interval
 	done
-	
-	trap ctrl_c INT
-	function ctrl_c() {
-		echo '{}]' >> $outputFile 
-		echo ''
-	}
-	
 fi;
