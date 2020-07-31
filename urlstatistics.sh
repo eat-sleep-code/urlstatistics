@@ -26,7 +26,7 @@ else
 	fi
 
 	echo ''
-	echo '[' >> $outputFile 
+	echo '[' > $outputFile 
 	while true; do
 		timestamp=$(date +"%Y%m%d%H%M%S")
 		echo '{' >> $outputFile
@@ -37,7 +37,9 @@ else
 		echo ' '$timestamp ':' $url
 		sleep $interval
 	done
-	echo '{}]' >> $outputFile 
-
-	echo ''
+	function finish {
+		echo '{}]' >> $outputFile 
+		echo ''
+	}
+	trap finish EXIT
 fi;
