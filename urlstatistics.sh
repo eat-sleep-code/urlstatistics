@@ -18,7 +18,7 @@ if [ -z "$url" ]; then
 	echo ''
 else
 	trap ctrl_c INT
-	function ctrl_c($outputFile) {
+	function ctrl_c() {
 		echo '{}]' >> $outputFile 
 		echo ''
 	}
